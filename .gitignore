@@ -1,0 +1,30 @@
+.DS_Store
+
+# Local browser automation artifacts
+.playwright-mcp/
+output/
+
+# Local visual regression and debug captures
+*-regression.png
+debug-*.png
+browser-comments-*.png
+core-*.png
+exercise-create-*.png
+finish-interactions-*.png
+free-template-*.png
+plan-*-regression.png
+plans-regression.png
+square-interactions-regression.png
+workout-paused-regression.png
+action-library-context-regression.png
+
+# Internal planning notes
+docs/*.md
+家庭运动*.md
+
+# Dependency and build output, for future framework migration
+node_modules/
+dist/
+build/
+.env
+.env.*
