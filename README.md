@@ -1,6 +1,6 @@
 # FamilyFit
 
-English | [中文版本](./README.zh-CN.md)
+English README | [中文版 README](./README.zh-CN.md)
 
 Chinese name: **家康**
 

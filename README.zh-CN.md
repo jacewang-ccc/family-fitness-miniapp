@@ -1,6 +1,6 @@
 # 家康
 
-[English](./README.md) | 中文版本
+[English README](./README.md) | 中文版 README
 
 **家康**（English name: **FamilyFit**）是一个面向家庭场景的运动健康小程序高保真 Web Demo，聚焦子女帮助父母制定运动计划、记录运动过程、查看家庭运动情况并形成更好的家庭运动氛围。
 
