@@ -1,70 +1,110 @@
-# 家动家康 - 家庭运动健康小程序原型
+# FamilyFit
 
-一个面向家庭场景的运动健康小程序 Web 原型，聚焦家庭成员一起制定运动计划、记录运动过程、查看家庭运动动态和维护个人健康档案。
+English | [中文版本](./README.zh-CN.md)
 
-当前版本是可交互的高保真前端原型，采用微信小程序视觉比例进行设计，可直接通过浏览器体验核心流程。
+Chinese name: **家康**
 
-## 在线体验
+**FamilyFit** is a high-fidelity WeChat-style mobile demo for a family fitness and health product. Chinese name: **家康**. It focuses on helping adult children support parents' exercise habits through plans, workout records, family visibility, and encouragement.
 
-Netlify 链接部署后补充。
+## Live Demo
 
-## 项目定位
+[https://family-fitness-miniapp.netlify.app](https://family-fitness-miniapp.netlify.app)
 
-家动家康面向需要共同管理运动习惯的家庭用户，尤其关注父母、中老年成员和日常轻量训练人群。产品希望把个人运动记录、家庭陪伴和基础健康数据放在同一个轻量工具里，让家庭成员能看见彼此的完成情况，并围绕运动计划形成持续反馈。
+## Background
 
-## 核心功能
+Many parents want to stay active but lack plans, records, and ongoing feedback. Adult children living away from home also need more than WeChat reminders to help parents build an exercise habit.
 
-- 运动首页：进入计划运动、自由运动、最近运动记录和运动项目库。
-- 计划模板库：选择家庭常用的有氧、力量和核心训练组合。
-- 自由运动：从运动项目库添加动作，配置时长、距离、重量、次数、组数等参数。
-- 运动中：记录每组完成状态，调整动作参数，完成后生成运动记录。
-- 家庭首页：查看成员状态、家庭排行、家庭日历预览和运动动态。
-- 家庭日历：按日期查看当天完成运动的家庭成员，并进入对应运动记录详情。
-- 家庭动态：发布运动记录，查看家庭成员的运动分享、评论和鼓励。
-- 健康档案：维护基础资料，记录体重、血压、血糖和心率等健康数据。
-- 家庭成员管理：查看家庭成员、处理加入申请和成员健康档案。
-- 广场内容：提供运动训练、营养学、日常健康和疾病调控相关内容卡片。
+This project explores a lightweight family exercise loop: parents can follow plans and record workouts, while children and family members can see progress, encourage completion, and build a healthier family exercise atmosphere.
 
-## 核心体验链路
+## Why This Project
 
-1. 进入运动首页。
-2. 选择自由运动或计划运动。
-3. 从运动项目库添加运动项目。
-4. 调整运动参数并开始运动。
-5. 在运动中记录动作或组数完成状态。
-6. 完成运动并发布记录。
-7. 在家庭动态中查看发布内容。
-8. 从家庭日历进入当天成员运动记录。
-9. 在我的页面进入健康档案并记录健康数据。
+- **Chat reminders are not effective enough**: Adult children want to encourage their parents to exercise, but messages are easy to ignore and do not show whether action actually happened.
 
-## 技术栈
+- **Parents lack simple workout records**: Many parents are not against exercise. They just lack an easy way to record what they did, for how long, and how much they completed.
 
-- HTML
-- CSS
-- JavaScript
-- 静态 Web 部署
+- **Exercise lacks planning and relevance**: Parents need exercise arrangements that fit their physical condition, but they often do not know how to create plans or choose suitable movements by themselves.
 
-当前版本保持为单文件原型，便于快速迭代交互和视觉细节。后续可以迁移到 Vite / React 或微信小程序工程结构。
+- **Existing products do not fit the scenario well**: Fitness apps lean toward young users and individual training, while health apps focus more on metrics. Remote family support is still underserved.
 
-## 本地运行
+- **Family participation can improve consistency**: When exercise is recorded, visible, and encouraged, it becomes less like an isolated task and more like a shared family habit.
 
-在项目根目录启动本地静态服务：
+## Design Approach
+
+The product is organized around four bottom tabs:
+
+- **Workout**: the primary action entry for planned workouts and free workout logging.
+- **Family**: family member status, family feed, family activity board, calendar preview, and workout record details.
+- **Discover**: content cards around exercise, nutrition, parent-friendly health topics, and movement education.
+- **Me**: personal profile, health profile, plan management, and family member management.
+
+The core demo flow is:
+
+```text
+Open the workout home
+-> Choose a planned workout or free workout
+-> Add or review exercise items
+-> Start the workout and log activity data
+-> Finish and publish the workout record
+-> View it in the family feed and calendar
+-> Turn activity into family encouragement and follow-up
+```
+
+The current version uses simulated frontend data and local UI state to validate the interaction loop. Health profiles, family members, plan libraries, and content surfaces are implemented as prototype screens to communicate the intended product architecture.
+
+## Core Features
+
+- Workout home for planned workouts, free workouts, recent records, and exercise library access.
+- Plan template library for family-friendly cardio, strength, stretching, and recovery routines.
+- Planned workout flow with task review before starting.
+- Free workout flow for adding multiple exercise items and configuring duration, distance, weight, reps, and sets.
+- Active workout logging with set completion, parameter adjustment, and workout completion.
+- Family home with member status, a family activity board, calendar preview, and activity feed.
+- Family calendar for checking which family members completed workouts on specific dates.
+- Family feed for shared workout records, comments, and encouragement.
+- Health profile surfaces for basic profile data and health metrics such as weight, blood pressure, blood glucose, and heart rate.
+- Family member management entry for member profiles and join requests.
+- Discover content cards for exercise, nutrition, daily health, and chronic-condition-related topics.
+
+## Current Implementation
+
+The current version is a high-fidelity interactive frontend prototype:
+
+- Designed in a WeChat mini-program-like mobile visual ratio and usable in a browser.
+- Includes four main tabs: Workout, Family, Discover, and Me.
+- Implements the core flow from workout selection to active logging, completion, publishing, and family feed visibility.
+- Includes key supporting screens such as family calendar, record detail, health profile, plan management, and member management.
+- Uses simulated frontend data and local UI state for interaction.
+
+The current version does not include a backend, database, payment flow, real AI API integration, real WeChat login, or multi-device synchronization.
+
+## Current Tech Stack
+
+- **HTML**: page structure.
+- **CSS**: visual design, mobile layout, interaction states, and motion.
+- **JavaScript**: screen navigation, local state updates, and prototype interactions.
+- **Netlify static deployment config**: `netlify.toml` for static hosting.
+
+## Running Locally
+
+This is a static single-page prototype. Run a local static server from the project root:
 
 ```bash
 python3 -m http.server 5177
 ```
 
-然后访问：
+Then open:
 
 ```text
 http://127.0.0.1:5177/index.html
 ```
 
-也可以直接用浏览器打开 `index.html`，但推荐使用本地服务方式体验。
+You can also open `index.html` directly in a browser, but using a local server is recommended.
 
-## 脚本检查
+## Tests and Build
 
-修改 `index.html` 后，可以运行以下命令检查内联脚本语法：
+The current project does not have a separate build pipeline or automated test framework.
+
+After editing `index.html`, you can run the following command to check the inline script syntax:
 
 ```bash
 node <<'NODE'
@@ -76,29 +116,48 @@ console.log('script syntax ok');
 NODE
 ```
 
-## 部署方式
+## Project Structure
 
-当前项目是静态单页原型，可以直接部署到 Netlify 或 Vercel。
+```text
+.
+├── index.html                         # Single-file high-fidelity interactive prototype
+├── netlify.toml                       # Netlify static deployment config
+├── README.md                          # English README
+├── README.zh-CN.md                    # Chinese README
+└── static/                            # Static assets
+```
 
-Netlify 推荐配置：
+## Demo Flow
 
-- Build command：留空
-- Publish directory：项目根目录
-- Entry：`index.html`
+1. Open the homepage and land on the Workout tab.
+2. Choose a planned workout or a free workout.
+3. Review a plan template, or add exercise items from the exercise library.
+4. Start the workout and log sets, weight, reps, duration, or distance.
+5. Finish the workout and publish it to the family.
+6. Open the Family tab to view the feed, calendar, and workout record detail.
+7. Open the Me tab to review the health profile and plan management entry.
 
-## 当前版本边界
+## MVP Trade-offs
 
-- 当前版本为前端原型，数据主要来自前端模拟数据。
-- 微信登录、真实家庭账号、云数据库和多端同步尚未接入。
-- 健康内容和运动建议用于产品交互展示，不构成医疗建议。
-- 后续上线微信小程序时，需要补充账号体系、数据持久化、隐私授权和健康数据合规说明。
+- **Validate the core loop first**: The first milestone focuses on the path from workout action to family-visible feedback.
+- **Use a static web demo for fast sharing**: The current format is easy to deploy, access online, and iterate quickly.
+- **Keep the experience parent-friendly**: The interface reduces unnecessary complexity while keeping enough structure for meaningful workout logging.
+- **Keep the product boundary clear**: The prototype does not provide medical advice, diagnosis, or treatment recommendations.
+- **Defer heavy backend features**: Real accounts, family invitations, permission systems, databases, and cloud synchronization are intentionally left for later stages.
 
-## 后续规划
+## Roadmap
 
-- 接入用户和家庭成员数据持久化。
-- 增加真实登录授权和家庭邀请流程。
-- 完善运动计划生成、保存和复用能力。
-- 增加运动记录、健康数据和家庭动态的云端同步。
-- 探索个性化运动建议和家庭健康提醒能力。
-- 迁移到微信小程序或跨端框架，实现正式小程序发布。
+- Add real user login and family invitation flows.
+- Add database persistence and cloud synchronization for workout records, family feed items, and health profiles.
+- Add privacy authorization and visibility controls for family members.
+- Integrate AI-generated workout planning as editable suggestions with health-risk prompts.
+- Migrate to a native WeChat mini-program or a cross-platform framework such as Taro or uni-app.
+- Add family weekly reports, share cards, and a short demo video.
+- Expand the exercise library, content management, and plan reuse features.
+- Add health data compliance notes before any real-world launch.
 
+## Notes
+
+This public repository keeps the runnable demo, core source file, and basic project documentation. Detailed business plans, real user data, private account information, and any future sensitive health data are intentionally excluded.
+
+Health content and exercise suggestions in this demo are for product interaction purposes only and do not constitute medical advice.

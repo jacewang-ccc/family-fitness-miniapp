@@ -17,6 +17,8 @@ plans-regression.png
 square-interactions-regression.png
 workout-paused-regression.png
 action-library-context-regression.png
+mobile-*.png
+netlify-mobile-home.png
 
 # Internal planning notes
 docs/*.md
@@ -31,3 +33,7 @@ build/
 
 # Local Netlify folder
 .netlify
+.netlify-deploy/
+
+# Local project packaging drafts
+_private_docs/

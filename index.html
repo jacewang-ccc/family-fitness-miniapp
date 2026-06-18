@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>家动家康 - 家庭运动健康小程序 UI</title>
+    <title>家康 - 家庭运动健康小程序 UI</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23eaf9f0'/%3E%3Cpath d='M34 12 22 34h11l-3 18 14-25H32l2-15Z' fill='%2328c978'/%3E%3C/svg%3E" />
     <style>
       :root {
@@ -63,11 +63,9 @@
 
       .stage {
         min-height: 100vh;
-        display: grid;
-        grid-template-columns: minmax(0, 390px) minmax(260px, 360px);
+        display: flex;
         align-items: center;
         justify-content: center;
-        gap: 36px;
         padding: 30px;
       }
 
@@ -3099,14 +3097,15 @@
       .feed-record-button {
         min-width: 40px;
         min-height: 40px;
-        border-radius: 14px;
-        color: var(--blue);
-        background: rgba(76, 130, 255, .08);
+        border-radius: 50%;
+        color: #42506b;
+        background: #f5f7f8;
+        border: 1px solid rgba(10, 12, 32, .08);
       }
 
       .feed-record-button .icon {
-        width: 19px;
-        height: 19px;
+        width: 18px;
+        height: 18px;
       }
 
       .feed-copy {
@@ -3124,24 +3123,32 @@
       }
 
       .action-row {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         gap: 8px;
         padding-top: 2px;
       }
 
       .action {
-        min-height: 42px;
-        border-radius: 12px;
-        padding: 0 8px;
+        min-width: 74px;
+        min-height: 34px;
+        border-radius: 999px;
+        padding: 0 11px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        color: #596071;
-        background: #f4f6f5;
+        gap: 6px;
+        color: #4f596b;
+        background: #f6f8f7;
         font-size: 12px;
-        font-weight: 720;
+        font-weight: 820;
+        border: 1px solid rgba(10, 12, 32, .06);
+      }
+
+      .action .icon {
+        width: 17px;
+        height: 17px;
       }
 
       .action.active {
@@ -3151,33 +3158,46 @@
 
       .feed-comments {
         margin-top: 10px;
-        padding: 10px;
-        border-radius: 14px;
-        background: #f7f9f8;
+        padding: 10px 12px;
+        border-radius: 16px;
+        background: #f6f8f7;
         display: grid;
-        gap: 8px;
+        gap: 6px;
+        position: relative;
+      }
+
+      .feed-comments::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 46px;
+        width: 12px;
+        height: 12px;
+        background: #f6f8f7;
+        transform: rotate(45deg);
+        border-left: 1px solid rgba(10, 12, 32, .04);
+        border-top: 1px solid rgba(10, 12, 32, .04);
       }
 
       .feed-comment {
-        display: grid;
-        grid-template-columns: 26px 1fr;
-        gap: 8px;
-        align-items: start;
         font-size: 12px;
-        color: var(--muted);
+        line-height: 1.45;
+        color: #485166;
       }
 
       .feed-comment strong {
-        display: block;
-        color: var(--ink);
+        color: #1c4d8f;
         font-size: 13px;
-        margin-bottom: 2px;
+        margin-right: 4px;
       }
 
       .feed-reply {
-        margin-top: 6px;
-        padding-left: 10px;
-        border-left: 2px solid #dfe8e5;
+        margin-top: 4px;
+        color: #4d576b;
+      }
+
+      .feed-reply strong {
+        color: #1c4d8f;
       }
 
       .report-hero {
@@ -3932,6 +3952,64 @@
         font-size: 14px;
       }
 
+      .mine-topline {
+        align-items: center;
+      }
+
+      .mine-title-stack {
+        min-width: 0;
+      }
+
+      .mine-title-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .mine-health-shortcut {
+        min-height: 34px;
+        padding: 0 11px 0 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        color: #11864e;
+        background: #eefbf2;
+        border: 1px solid rgba(35, 189, 120, .18);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .mine-health-shortcut .icon-bubble {
+        width: 22px;
+        height: 22px;
+        border-radius: 8px;
+        background: transparent;
+      }
+
+      .mine-health-shortcut .icon {
+        width: 15px;
+        height: 15px;
+      }
+
+      .account-avatar-button {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: transparent;
+        border: 0;
+      }
+
+      .account-avatar-button .avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, .84);
+      }
+
       .member-record-list {
         display: grid;
         gap: 10px;
@@ -4021,6 +4099,43 @@
         font-weight: 760;
       }
 
+      #member-health-profile .health-log-card {
+        padding: 16px;
+      }
+
+      #member-health-profile .member-workout-section {
+        margin: 20px 8px 0;
+      }
+
+      #member-health-profile .member-workout-section .section-head {
+        padding: 0 2px;
+      }
+
+      #member-health-profile .member-record-list {
+        gap: 12px;
+      }
+
+      #member-health-profile .member-record-card {
+        min-height: 68px;
+        padding: 10px 12px;
+        grid-template-columns: 42px minmax(0, 1fr) 28px;
+        gap: 10px;
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: inset 0 0 0 1px rgba(223, 227, 225, .72);
+      }
+
+      #member-health-profile .member-record-card .icon-bubble {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        box-shadow: none;
+      }
+
+      #member-health-profile .member-record-card > .icon:last-child {
+        justify-self: center;
+      }
+
       .health-entry {
         min-height: 46px;
         border-radius: 16px;
@@ -4050,6 +4165,7 @@
 
       .admin-panel .section-head {
         margin: 0 0 12px;
+        align-items: flex-start;
       }
 
       .admin-actions {
@@ -5103,41 +5219,6 @@
         background: var(--green-soft);
       }
 
-      .side {
-        align-self: center;
-        max-width: 360px;
-        color: #1d2230;
-      }
-
-      .side h1 {
-        margin: 0 0 12px;
-        font-size: 34px;
-        line-height: 1.08;
-      }
-
-      .side p {
-        margin: 0 0 18px;
-        color: #596071;
-        font-size: 15px;
-        line-height: 1.7;
-      }
-
-      .screen-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-      }
-
-      .jump {
-        min-height: 44px;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid var(--line);
-        color: var(--ink);
-        font-size: 13px;
-        font-weight: 760;
-      }
-
       .drawer {
         position: absolute;
         left: 0;
@@ -5231,31 +5312,64 @@
 
       @media (max-width: 860px) {
         .stage {
-          grid-template-columns: minmax(0, 390px);
           padding: 16px;
-        }
-
-        .side {
-          display: none;
         }
       }
 
       @media (max-width: 420px) {
         .stage {
+          min-height: 100dvh;
           padding: 0;
+          display: block;
+          background: var(--bg);
         }
 
         .phone {
           width: 100vw;
-          height: 100vh;
+          height: 100dvh;
           border-radius: 0;
+          border: 0;
+          box-shadow: none;
+        }
+
+        .statusbar {
+          display: none;
+        }
+
+        .app {
+          height: 100%;
+        }
+
+        .screen {
+          inset: 0 0 72px;
+          padding-left: max(16px, env(safe-area-inset-left));
+          padding-right: max(16px, env(safe-area-inset-right));
+          padding-bottom: calc(22px + env(safe-area-inset-bottom));
+        }
+
+        .topline {
+          margin-left: calc(-1 * max(16px, env(safe-area-inset-left)));
+          margin-right: calc(-1 * max(16px, env(safe-area-inset-right)));
+          padding-left: max(16px, env(safe-area-inset-left));
+          padding-right: max(16px, env(safe-area-inset-right));
+        }
+
+        .category-scroll {
+          margin-right: calc(-1 * max(16px, env(safe-area-inset-right)));
+          padding-right: max(16px, env(safe-area-inset-right));
+          max-width: calc(100vw - max(16px, env(safe-area-inset-left)));
+        }
+
+        .tabbar {
+          height: calc(72px + env(safe-area-inset-bottom));
+          padding-bottom: calc(10px + env(safe-area-inset-bottom));
         }
       }
     </style>
   </head>
   <body>
     <main class="stage">
-      <section class="phone" aria-label="家动家康移动端原型">
+      <section class="phone" aria-label="家康移动端原型">
         <div class="statusbar">
           <span>9:41</span>
           <div class="signals">
@@ -5268,9 +5382,10 @@
         <div class="app">
           <section class="screen" id="login" data-tab="mine">
             <div class="topline">
-              <div>
-                <h2 class="title">微信登录</h2>
-                <p class="subtitle">使用微信授权进入小程序</p>
+              <button class="icon-button" data-back="mine-home" aria-label="返回我的"><svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+              <div style="min-width:0;flex:1">
+                <h2 class="nav-title" style="text-align:left">微信登录</h2>
+                <p class="subtitle" style="margin-top:4px">使用微信授权进入小程序</p>
               </div>
               <span class="avatar" id="login-avatar">李</span>
             </div>
@@ -6068,7 +6183,6 @@
                   <div class="action-row">
                     <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M7 10v11"/><path d="M15 5.9 14 10h5.8a2 2 0 0 1 2 2.3l-1.2 7a2 2 0 0 1-2 1.7H7"/></svg>12</button>
                     <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>评论 3</button>
-                    <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>鼓励</button>
                   </div>
                 </article>
                 <article class="card feed-card">
@@ -6081,7 +6195,6 @@
                   <div class="action-row">
                     <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M7 10v11"/><path d="M15 5.9 14 10h5.8a2 2 0 0 1 2 2.3l-1.2 7a2 2 0 0 1-2 1.7H7"/></svg>8</button>
                     <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>评论 2</button>
-                    <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>鼓励</button>
                   </div>
                 </article>
                 <div class="feed-day-label">昨天</div>
@@ -6096,7 +6209,6 @@
                   <div class="action-row">
                     <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M7 10v11"/><path d="M15 5.9 14 10h5.8a2 2 0 0 1 2 2.3l-1.2 7a2 2 0 0 1-2 1.7H7"/></svg>15</button>
                     <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>评论 5</button>
-                    <button class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>鼓励</button>
                   </div>
                 </article>
                 <button class="btn secondary small" data-screen="family-feed" style="margin:2px 0 10px">查看更多家庭动态</button>
@@ -6113,13 +6225,13 @@
             <article class="card feed-card">
               <div class="feed-top"><div class="avatar small pink">妈</div><div><div class="task-title">妈妈 完成肩颈拉伸</div><div class="task-meta">今天 21:05</div></div><span class="pill green">已完成</span></div>
               <p class="feed-copy">跟着计划做完了 10 分钟，脖子轻松很多。</p>
-              <div class="action-row"><button class="action">点赞 8</button><button class="action">评论 2</button><button class="action">真棒</button></div>
+              <div class="action-row"><button class="action">点赞 8</button><button class="action">评论 2</button></div>
             </article>
             <article class="card feed-card">
               <div class="feed-top"><div class="avatar small blue">妹</div><div><div class="task-title">妹妹 发布跑步记录</div><div class="task-meta">昨天 19:40</div></div><span class="pill blue">跑步</span></div>
               <p class="feed-copy">3 公里轻松跑，今天陪妈妈一起拉伸。</p>
               <div class="feed-images"><div class="photo walk"></div><div class="photo strength"></div><div class="photo food"></div></div>
-              <div class="action-row"><button class="action">点赞 16</button><button class="action">评论 4</button><button class="action">鼓励</button></div>
+              <div class="action-row"><button class="action">点赞 16</button><button class="action">评论 4</button></div>
             </article>
           </section>
 
@@ -6382,24 +6494,18 @@
           </section>
 
           <section class="screen" id="mine-home" data-tab="mine">
-            <div class="topline">
-              <div>
-                <h2 class="title">我的</h2>
-                <p class="subtitle">计划、档案与家庭管理</p>
+            <div class="topline mine-topline">
+              <div class="mine-title-stack">
+                <div class="mine-title-row">
+                  <h2 class="title">我的</h2>
+                  <button class="mine-health-shortcut" data-screen="health-record">
+                    <span class="icon-bubble green"><svg class="icon" viewBox="0 0 24 24"><path d="M20 7c-2 0-3.5 1-4.5 3C14 7 12 5 9 5 5.7 5 3 7.7 3 11c0 5 9 10 9 10s9-5 9-10c0-1.5-.5-2.8-1-4Z"/></svg></span>
+                    <span>健康档案</span>
+                  </button>
+                </div>
               </div>
-              <span style="width:44px"></span>
-            </div>
-
-            <div class="card profile-card profile-hub">
-              <div class="profile-main-row">
-                <div class="avatar">李</div>
-                <div><div class="task-title">李先生</div></div>
-                <button class="health-entry" data-screen="login"><span>账号</span><small>已登录</small></button>
-              </div>
-              <button class="profile-health-card simple" data-screen="health-record">
-                <span class="icon-bubble green"><svg class="icon" viewBox="0 0 24 24"><path d="M20 7c-2 0-3.5 1-4.5 3C14 7 12 5 9 5 5.7 5 3 7.7 3 11c0 5 9 10 9 10s9-5 9-10c0-1.5-.5-2.8-1-4Z"/></svg></span>
-                <span><strong class="task-title">我的健康档案</strong></span>
-                <svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              <button class="account-avatar-button" data-screen="login" aria-label="查看李先生账号">
+                <span class="avatar">李</span>
               </button>
             </div>
 
@@ -6407,7 +6513,6 @@
               <div class="section-head">
                 <div>
                   <h3 class="section-title">计划管理权限</h3>
-                  <p class="task-meta" style="margin-top:4px">计划分享在计划库里处理。</p>
                 </div>
                 <span class="pill green">管理员</span>
               </div>
@@ -6570,7 +6675,7 @@
                 <div><span>血糖</span><strong id="member-health-glucose">6.1</strong></div>
               </div>
             </div>
-            <div class="section card">
+            <div class="section member-workout-section">
               <div class="section-head" style="margin:0 0 10px">
                 <h3 class="section-title">最近运动</h3>
                 <button class="link" data-screen="family-calendar">看日历</button>
@@ -7097,7 +7202,7 @@
               <button class="link" data-close-drawer>关闭</button>
             </div>
             <div class="feed-comments" id="feed-comment-list"></div>
-            <textarea class="textarea" id="feed-comment-input" style="min-height:86px" placeholder="写一句鼓励或补充..."></textarea>
+            <textarea class="textarea" id="feed-comment-input" style="min-height:86px" placeholder="写一句评论..."></textarea>
             <div style="height:12px"></div>
             <button class="btn primary" data-send-feed-comment>发送评论</button>
           </section>
@@ -7156,29 +7261,6 @@
         </div>
       </section>
 
-      <aside class="side">
-        <h1>家庭运动健康小程序 UI</h1>
-        <p>390×844 微信小程序视口，高保真交互原型。视觉参考给定页面的克制白底、深色 CTA、柔和高亮与轻量卡片，但信息架构完全围绕家庭运动记录。</p>
-        <div class="screen-list">
-          <button class="jump" data-screen="login">登录授权</button>
-          <button class="jump" data-screen="sport-home">运动首页</button>
-          <button class="jump" data-screen="plan-select">选择计划</button>
-          <button class="jump" data-screen="plan-ready">计划运动</button>
-          <button class="jump" data-screen="workout-active">运动中</button>
-          <button class="jump" data-screen="record-free">自由记录</button>
-          <button class="jump" data-screen="exercise-create">创建项目</button>
-          <button class="jump" data-screen="edit-strength">力量编辑</button>
-          <button class="jump" data-screen="finish">完成发布</button>
-          <button class="jump" data-screen="family-home">家庭首页</button>
-          <button class="jump" data-screen="family-calendar">家庭日历</button>
-          <button class="jump" data-screen="family-feed">家庭动态</button>
-          <button class="jump" data-screen="family-report">家庭年报</button>
-          <button class="jump" data-screen="square-home">广场</button>
-          <button class="jump" data-screen="mine-home">我的</button>
-          <button class="jump" data-screen="plan-builder">创建计划</button>
-          <button class="jump" data-screen="ai-plan">AI 问询</button>
-        </div>
-      </aside>
       <div class="saved-toast" id="saved-toast">已保存</div>
     </main>
 
@@ -7298,6 +7380,7 @@
       let draggedReorderCard = null;
       let pointerReorderCard = null;
       let pointerReorderList = null;
+      let swipeBackStart = null;
       let activeHealthTimePart = "year";
       let selectedTransferAdmin = "";
       const screenHistoryStack = [];
@@ -7363,7 +7446,12 @@
           pillClass: "green",
           copy: "清晨公园快走 30 分钟，感觉神清气爽！",
           images: ["walk", "food", "strength"],
-          actions: ["12", "评论 3", "鼓励"],
+          actions: ["12", "评论 3"],
+          comments: [
+            { name: "李先生", text: "今天这个配速挺稳的，明天可以继续 30 分钟。" },
+            { name: "妈妈", text: "早上空气不错，回来记得补点水。" },
+            { name: "妹妹", text: "我晚上也想一起走。", replyTo: "爸爸", replyText: "可以，饭后一起出门。" }
+          ],
           record: null
         },
         {
@@ -7378,7 +7466,11 @@
           pillClass: "green",
           copy: "跟着视频做完一组，脖子轻松很多，晚上再做一次。",
           images: [],
-          actions: ["8", "评论 2", "鼓励"],
+          actions: ["8", "评论 2"],
+          comments: [
+            { name: "爸爸", text: "这个动作我晚上也试试。" },
+            { name: "李先生", text: "先做轻一点，肩膀别耸起来。" }
+          ],
           record: null
         },
         {
@@ -7393,7 +7485,12 @@
           pillClass: "blue",
           copy: "跑步机 3 公里，速度稳定，最后做了小腿放松。",
           images: ["walk", "strength", "food"],
-          actions: ["15", "评论 5", "鼓励"],
+          actions: ["15", "评论 5"],
+          comments: [
+            { name: "妈妈", text: "跑完拉伸做了就好。" },
+            { name: "爸爸", text: "速度稳定最重要。" },
+            { name: "李先生", text: "下次可以记录一下坡度。" }
+          ],
           record: null
         },
         {
@@ -7408,7 +7505,10 @@
           pillClass: "green",
           copy: "哑铃弯举、深蹲和平板支撑都完成了，最后一组稍累。",
           images: ["strength"],
-          actions: ["6", "评论 1", "鼓励"],
+          actions: ["6", "评论 1"],
+          comments: [
+            { name: "爸爸", text: "最后一组累就先保持重量。" }
+          ],
           record: null
         },
         {
@@ -7423,7 +7523,11 @@
           pillClass: "green",
           copy: "晚饭后慢走 25 分钟，步速稳定，膝盖没有不适。",
           images: ["walk"],
-          actions: ["10", "评论 2", "真棒"],
+          actions: ["10", "评论 2"],
+          comments: [
+            { name: "李先生", text: "膝盖没不适就很好。" },
+            { name: "妈妈", text: "下次我也一起走。" }
+          ],
           record: null
         },
         {
@@ -7438,7 +7542,11 @@
           pillClass: "green",
           copy: "早上做了一轮八段锦，肩背放松，准备明天继续。",
           images: [],
-          actions: ["9", "评论 2", "鼓励"],
+          actions: ["9", "评论 2"],
+          comments: [
+            { name: "妹妹", text: "这个适合早上做。" },
+            { name: "李先生", text: "动作慢一点更稳。" }
+          ],
           record: null
         },
         {
@@ -7453,7 +7561,11 @@
           pillClass: "blue",
           copy: "跑步后做了小腿和髋部拉伸，明天腿应该轻松点。",
           images: ["walk", "strength"],
-          actions: ["11", "评论 3", "鼓励"],
+          actions: ["11", "评论 3"],
+          comments: [
+            { name: "妈妈", text: "拉伸做完腿会舒服很多。" },
+            { name: "李先生", text: "小腿后侧多停留一会儿。" }
+          ],
           record: null
         }
       ];
@@ -8499,12 +8611,10 @@
       function feedCardHtml(item) {
         const images = item.images?.length ? `<div class="feed-images">${item.images.map((name) => `<div class="photo ${name}"></div>`).join("")}</div>` : "";
         const actions = item.actions.map((text, index) => {
-          const type = index === 0 ? "like" : index === 1 ? "comment" : "encourage";
+          const type = index === 0 ? "like" : "comment";
           const icon = index === 0
             ? '<svg class="icon" viewBox="0 0 24 24"><path d="M7 10v11"/><path d="M15 5.9 14 10h5.8a2 2 0 0 1 2 2.3l-1.2 7a2 2 0 0 1-2 1.7H7"/></svg>'
-            : index === 1
-              ? '<svg class="icon" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>'
-              : '<svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>';
+            : '<svg class="icon" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>';
           return `<button class="action${item.actionState?.[type] ? " active" : ""}" data-feed-action="${type}" data-feed-id="${escapeHtml(item.id)}">${icon}${escapeHtml(text)}</button>`;
         }).join("");
         return `
@@ -8512,7 +8622,7 @@
             <div class="feed-top">
               <div class="avatar small ${escapeHtml(item.avatarClass || "")}">${escapeHtml(item.avatar)}</div>
               <div><div class="task-title">${escapeHtml(item.title)}</div><div class="task-meta">${escapeHtml(item.time)}</div></div>
-              <button class="icon-button feed-record-button" data-feed-record-id="${escapeHtml(item.id)}" aria-label="查看运动记录"><svg class="icon" viewBox="0 0 24 24"><path d="M8 6h8"/><path d="M8 12h5"/><path d="M8 18h8"/><path d="M17 10l3 3-3 3"/></svg></button>
+              <button class="icon-button feed-record-button" data-feed-record-id="${escapeHtml(item.id)}" aria-label="查看运动记录"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></button>
             </div>
             <p class="feed-copy">${escapeHtml(item.copy)}</p>
             ${images}
@@ -8526,11 +8636,10 @@
         const box = card?.querySelector(".feed-comments");
         if (!box) return;
         const item = familyFeedItems.find((feed) => feed.id === feedId);
-        const comments = [
-          { avatar: "妈", name: "妈妈", text: "不错，今天这个强度刚好。", reply: item?.member === "爸爸" ? "李先生：明天可以继续快走。" : "爸爸：做完记得拉伸。" },
-          { avatar: "妹", name: "妹妹", text: "我也想跟这个计划。" }
-        ];
-        box.innerHTML = comments.map((comment) => `<div class="feed-comment"><div class="avatar small">${escapeHtml(comment.avatar)}</div><div><strong>${escapeHtml(comment.name)}</strong><span>${escapeHtml(comment.text)}</span>${comment.reply ? `<div class="feed-reply">${escapeHtml(comment.reply)}</div>` : ""}</div></div>`).join("");
+        const comments = item?.comments?.length ? item.comments : [];
+        box.innerHTML = comments.length
+          ? comments.map((comment) => `<div class="feed-comment"><strong>${escapeHtml(comment.name)}：</strong>${escapeHtml(comment.text)}${comment.replyTo ? `<div class="feed-reply"><strong>${escapeHtml(comment.replyTo)}：</strong>${escapeHtml(comment.replyText || "")}</div>` : ""}</div>`).join("")
+          : `<div class="feed-comment">暂无评论</div>`;
         box.hidden = false;
       }
 
@@ -8557,18 +8666,15 @@
         if (!item) return;
         item.actionState ||= {};
         if (actionType === "comment") {
-          openFeedComments(item);
+          const card = document.querySelector(`.feed-card[data-feed-id="${CSS.escape(feedId)}"]`);
+          renderFeedCommentThread(card, feedId);
           return;
         }
-        const index = actionType === "like" ? 0 : 2;
+        const index = 0;
         const active = !item.actionState[actionType];
         item.actionState[actionType] = active;
-        if (actionType === "like") {
-          const next = Math.max(0, feedActionCount(item.actions[index]) + (active ? 1 : -1));
-          item.actions[index] = String(next);
-        } else {
-          item.actions[index] = active ? "已鼓励" : "鼓励";
-        }
+        const next = Math.max(0, feedActionCount(item.actions[index]) + (active ? 1 : -1));
+        item.actions[index] = String(next);
         renderFamilyFeeds();
       }
 
@@ -8581,7 +8687,10 @@
         if (title) title.textContent = item.title;
         if (list) {
           list.innerHTML = item.comments.length
-            ? item.comments.map((text) => `<div class="feed-comment-row">${escapeHtml(text)}</div>`).join("")
+            ? item.comments.map((comment) => {
+                const obj = typeof comment === "string" ? { name: "家人", text: comment } : comment;
+                return `<div class="feed-comment-row"><strong>${escapeHtml(obj.name || "家人")}：</strong>${escapeHtml(obj.text || "")}${obj.replyTo ? `<div class="feed-reply"><strong>${escapeHtml(obj.replyTo)}：</strong>${escapeHtml(obj.replyText || "")}</div>` : ""}</div>`;
+              }).join("")
             : `<div class="feed-comment-row">暂无评论</div>`;
         }
         if (input) input.value = "";
@@ -8594,7 +8703,7 @@
         if (!item || !input) return;
         const text = input.value.trim() || "今天练得很稳，继续保持。";
         item.comments ||= [];
-        item.comments.unshift(text);
+        item.comments.unshift({ name: "李先生", text });
         const count = feedActionCount(item.actions[1]) + 1;
         item.actions[1] = `评论 ${count}`;
         renderFamilyFeeds();
@@ -8620,7 +8729,8 @@
           pillClass: "green",
           copy: lastCompletedWorkoutRecord.feeling,
           images: ["strength", "walk", "food"],
-          actions: ["0", "评论 0", "鼓励"],
+          actions: ["0", "评论 0"],
+          comments: [],
           record: lastCompletedWorkoutRecord
         });
         const targetDay = selectedCalendarDay || 19;
@@ -10414,14 +10524,34 @@
       document.addEventListener("pointerdown", (event) => {
         const handle = event.target.closest("[data-drag-reorder], [data-move-plan-item]");
         const card = reorderTargetFromHandle(handle);
-        if (!card) return;
-        pointerReorderCard = card;
-        pointerReorderList = card.parentElement;
-        card.classList.add("dragging");
-        handle.setPointerCapture?.(event.pointerId);
+        if (card) {
+          pointerReorderCard = card;
+          pointerReorderList = card.parentElement;
+          card.classList.add("dragging");
+          handle.setPointerCapture?.(event.pointerId);
+          swipeBackStart = null;
+          return;
+        }
+        const interactive = event.target.closest("input, textarea, select, [contenteditable='true'], .drawer.active, .scrim.active, .tabbar, [data-picker], [data-open-picker], [data-toggle-set], [data-toggle-done]");
+        const activeScreen = document.querySelector(".screen.active");
+        if (!interactive && activeScreen && event.clientX <= 28 && screenHistoryStack.length) {
+          swipeBackStart = {
+            id: event.pointerId,
+            x: event.clientX,
+            y: event.clientY,
+            screen: activeScreen.id
+          };
+        } else {
+          swipeBackStart = null;
+        }
       });
 
       document.addEventListener("pointermove", (event) => {
+        if (swipeBackStart && swipeBackStart.id === event.pointerId) {
+          const dx = event.clientX - swipeBackStart.x;
+          const dy = Math.abs(event.clientY - swipeBackStart.y);
+          if (dx > 18 && dy < 32) event.preventDefault();
+        }
         if (!pointerReorderCard || !pointerReorderList) return;
         const selector = pointerReorderCard.classList.contains("workout-action") ? ".workout-action" : pointerReorderCard.classList.contains("free-item-card") ? ".free-item-card" : ".plan-item-card";
         const siblings = [...pointerReorderList.querySelectorAll(selector)].filter((item) => item !== pointerReorderCard);
@@ -10438,7 +10568,7 @@
         pointerReorderList.insertBefore(pointerReorderCard, after ? over.nextSibling : over);
       }, { passive: false });
 
-      document.addEventListener("pointerup", () => {
+      document.addEventListener("pointerup", (event) => {
         if (!pointerReorderCard) return;
         pointerReorderList?.querySelectorAll(".reorder-target").forEach((item) => item.classList.remove("reorder-target"));
         pointerReorderCard.classList.remove("dragging");
@@ -10446,6 +10576,23 @@
         if (pointerReorderCard.classList.contains("plan-item-card")) updatePlanBuilderState();
         pointerReorderCard = null;
         pointerReorderList = null;
+        swipeBackStart = null;
+      });
+
+      document.addEventListener("pointerup", (event) => {
+        if (!swipeBackStart || swipeBackStart.id !== event.pointerId) return;
+        const dx = event.clientX - swipeBackStart.x;
+        const dy = Math.abs(event.clientY - swipeBackStart.y);
+        const sameScreen = document.querySelector(".screen.active")?.id === swipeBackStart.screen;
+        swipeBackStart = null;
+        if (sameScreen && dx >= 72 && dy <= 48) {
+          event.preventDefault();
+          goBackScreen();
+        }
+      });
+
+      document.addEventListener("pointercancel", () => {
+        swipeBackStart = null;
       });
 
       document.addEventListener("input", (event) => {
@@ -11203,16 +11350,10 @@
           const original = feedAction.textContent.trim();
           const card = feedAction.closest(".feed-card");
           const feedId = feedAction.dataset.feedId || card?.dataset.feedId;
-          const numberMatch = original.match(/(\d+)/);
-          if (numberMatch && !feedAction.dataset.tapped) {
-            feedAction.dataset.tapped = "true";
-            feedAction.innerHTML = feedAction.innerHTML.replace(numberMatch[1], String(Number(numberMatch[1]) + 1));
-          }
-          feedAction.classList.add("active");
           if (original.includes("评论")) {
             renderFeedCommentThread(card, feedId);
           } else {
-            showToast("已送出鼓励");
+            updateFeedAction(feedId, "like");
           }
           return;
         }
@@ -11577,6 +11718,13 @@
           } else {
             navigateScreen(screenButton.dataset.screen);
           }
+          return;
+        }
+
+        const backButton = event.target.closest("[data-back]");
+        if (backButton) {
+          event.preventDefault();
+          goBackScreen(backButton.dataset.back || "sport-home");
           return;
         }
 
